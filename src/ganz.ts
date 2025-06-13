@@ -21,6 +21,6 @@ export default ganz;
 
 //
 
-export { Content } from "./content";
-export { Loadable } from "./loadable";
-export { Verifiable } from "./verifiable";
+export type { Content } from "./content";
+export type { Loadable } from "./loadable";
+export type { Verifiable } from "./verifiable";
