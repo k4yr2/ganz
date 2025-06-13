@@ -13,6 +13,17 @@ export class ganz<T, C extends GanzContent<T>> {
 
     //
 
+    public async do(fn : (content : C) => Promise<void>): Promise<ganz<T, C>> {
+        if (this.content.value === null) {
+            throw new Error("Cannot perform operation on null value");
+        }
+
+        await fn(this.content);
+        return this;
+    }
+
+    //
+
     public static loadable<T>(value: T | null): ganz<T, GanzLoadable<T>> {
         return new ganz<T, GanzLoadable<T>>({ value, loading: false });
     }
