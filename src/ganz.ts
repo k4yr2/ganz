@@ -3,3 +3,9 @@ export class ganz {
 }
 
 export default ganz;
+
+//
+
+export { Content } from "./content";
+export { Loadable } from "./loadable";
+export { Verifiable } from "./verifiable";
