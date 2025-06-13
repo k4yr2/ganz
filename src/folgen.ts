@@ -18,3 +18,9 @@ export class folgen {
 }
 
 export default folgen;
+
+//
+
+export { FolgenBase } from "./folgenBase";
+export { FolgenLoadable } from "./folgenLoadable";
+export { FolgenVerifiable } from "./folgenVerifiable";
