@@ -1,4 +1,4 @@
-import FolgenLoadable from "./folgenLoadable";
+import { FolgenLoadable } from "./folgenLoadable";
 
 export class FolgenVerifiable<T> extends FolgenLoadable<T> {
     #verified: boolean = false;
