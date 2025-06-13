@@ -1,15 +1,18 @@
+import { FolgenLoadable } from "./folgenLoadable";
+import { FolgenVerifiable } from "./folgenVerifiable";
+
 export class folgen {
 
     private constructor() {
     }
 
-    /*public static loadable<T>(value: T | null): folgen<T, FolgenLoadable<T>> {
-        return new folgen<T, FolgenLoadable<T>>({ value, loading: false });
+    public static loadable<T>(content: T | null): FolgenLoadable<T> {
+        return new FolgenLoadable<T>(content);
     }
 
-    public static verifiable<T>(value: T | null): folgen<T, FolgenVerifiable<T>> {
-        return new folgen<T, FolgenVerifiable<T>>({ value, loading: false, verified: false });
-    }*/
+    public static verifiable<T>(content: T | null): FolgenVerifiable<T> {
+        return new FolgenVerifiable<T>(content);
+    }
 
     //
 }
