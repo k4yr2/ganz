@@ -1,5 +1,5 @@
 import GanzContent from "./content";
-import Loadable from "./loadable";
+import GanzLoadable from "./loadable";
 import Verifiable from "./verifiable";
 
 export class ganz<T, C extends GanzContent<T>> {
@@ -9,8 +9,8 @@ export class ganz<T, C extends GanzContent<T>> {
 
     //
 
-    public static loadable<T>(value: T | null): ganz<T, Loadable<T>> {
-        return new ganz<T, Loadable<T>>({ value, loading: false });
+    public static loadable<T>(value: T | null): ganz<T, GanzLoadable<T>> {
+        return new ganz<T, GanzLoadable<T>>({ value, loading: false });
     }
 
     public static verifiable<T>(value: T | null): ganz<T, Verifiable<T>> {
@@ -19,7 +19,7 @@ export class ganz<T, C extends GanzContent<T>> {
 
     //
 
-    public static setLoading<T, G extends Loadable<T>>(obj: G, loading: boolean = true) {
+    public static setLoading<T, G extends GanzLoadable<T>>(obj: G, loading: boolean = true) {
         obj.loading = loading;
     }
 
@@ -37,5 +37,5 @@ export default ganz;
 //
 
 export type { GanzContent as Content } from "./content";
-export type { Loadable } from "./loadable";
+export type { GanzLoadable as Loadable } from "./loadable";
 export type { Verifiable } from "./verifiable";
