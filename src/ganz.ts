@@ -6,18 +6,18 @@ export class ganz {
 
     //
 
-    public static loadable<T>(content: T | null, loading: boolean = true): Loadable<T> {
+    public static loadable<T>(content: T | null): Loadable<T> {
         return {
             content,
-            loading
+            loading: false
         };
     }
 
-    public static verifiable<T>(content: T | null, verified: boolean = false, loading: boolean = true): Verifiable<T> {
+    public static verifiable<T>(content: T | null): Verifiable<T> {
         return {
             content,
-            loading,
-            verified
+            loading: false,
+            verified: false
         };
     }
 
