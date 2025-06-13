@@ -2,9 +2,9 @@ import Content from "./content";
 import Loadable from "./loadable";
 import Verifiable from "./verifiable";
 
-export class ganz<T, G extends Content<T>> {
+export class ganz<T, C extends Content<T>> {
 
-    public constructor(protected g : G) {
+    public constructor(public content : C) {
     }
 
     //
