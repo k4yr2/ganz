@@ -1,8 +1,9 @@
 {
   "name": "@fuuwille/folgen-temp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/folgen.js",
+  "types": "dist/folgen.d.ts",
   "exports": {
     ".": {
       "import": "./dist/folgen.js",
