@@ -1,3 +1,3 @@
-export type FolgenType<T = any> = { content: T } | null;
+export type FolgenType<T = any> = { content: T | undefined };
 
 export default FolgenType;
