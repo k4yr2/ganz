@@ -13,7 +13,7 @@ export class ganz<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     //
 
-    public async do(fn : (content : C) => Promise<void>): Promise<ganz<T, C>> {
+    public async do(fn : (content : C) => Promise<void>): Promise<ganz<T, C>>{
         if (this.content.value === null) {
             throw new Error("Cannot perform operation on null value");
         }
