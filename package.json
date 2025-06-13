@@ -1,8 +1,14 @@
 {
-  "name": "ganz",
-  "version": "0.1.0",
+  "name": "folgen",
+  "version": "1.0.0",
   "description": "",
-  "main": "dist/ganz.js",
+  "main": "dist/folgen.js",
+  "exports": {
+    ".": {
+      "import": "./dist/folgen.js",
+      "types": "./dist/folgen.d.ts"
+    }
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "npx tsc",
