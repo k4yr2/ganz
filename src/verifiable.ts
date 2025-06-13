@@ -1,5 +1,5 @@
 import GanzLoadable from "./loadable";
 
-export type Verifiable<T> = GanzLoadable<T> & { verified: boolean };
+export type GanzVerifiable<T> = GanzLoadable<T> & { verified: boolean };
 
-export default Verifiable;
+export default GanzVerifiable;
