@@ -2,7 +2,7 @@ import GanzContent from "./content";
 import GanzLoadable from "./loadable";
 import GanzVerifiable from "./verifiable";
 
-export class ganz<T, C extends GanzContent<T>> {
+export class ganz<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     public constructor(public content : C) {
     }
