@@ -23,11 +23,11 @@ export class ganz {
 
     //
 
-    public static setLoading<T>(obj: Loadable<T>, loading: boolean = true) {
+    public static setLoading<T, G extends Loadable<T>>(obj: G, loading: boolean = true) {
         obj.loading = loading;
     }
 
-    public static setVerified<T>(obj: Verifiable<T>, verified: boolean = true) {
+    public static setVerified<T, G extends Verifiable<T>>(obj: G, verified: boolean = true) {
         obj.verified = verified;
 
         if (verified) {
