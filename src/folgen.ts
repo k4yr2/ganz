@@ -9,11 +9,11 @@ export class folgen {
     }
 
     public static loadable<T>(content: T): FolgenLoadable<T> {
-        return { content, loading: false };
+        return { content, loading: false } as FolgenLoadable<T>;
     }
 
     public static verifiable<T>(content: T): FolgenVerifiable<T> {
-        return { content, verified: false };
+        return { content, verified: false } as FolgenVerifiable<T>;
     }
 
     public static union<T, U extends FolgenType<T>[]>(content: T) : FolgenUnion<U> {
