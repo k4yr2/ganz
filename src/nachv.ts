@@ -1,8 +1,8 @@
-import GanzContent from "./nachvContent";
-import GanzLoadable from "./loadable";
+import NachvContent from "./nachvContent";
+import NachvLoadable from "./nachvLoadable";
 import GanzVerifiable from "./verifiable";
 
-export class nachv<T = any, C extends GanzContent<T> = GanzContent<T>> {
+export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
 
     public constructor(public content : C) {
     }
@@ -24,8 +24,8 @@ export class nachv<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     //
 
-    public static loadable<T>(value: T | null): nachv<T, GanzLoadable<T>> {
-        return new nachv<T, GanzLoadable<T>>({ value, loading: false });
+    public static loadable<T>(value: T | null): nachv<T, NachvLoadable<T>> {
+        return new nachv<T, NachvLoadable<T>>({ value, loading: false });
     }
 
     public static verifiable<T>(value: T | null): nachv<T, GanzVerifiable<T>> {
@@ -34,7 +34,7 @@ export class nachv<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     //
 
-    public static setLoading<T, G extends GanzLoadable<T>>(obj: G, loading: boolean = true) {
+    public static setLoading<T, G extends NachvLoadable<T>>(obj: G, loading: boolean = true) {
         obj.loading = loading;
     }
 
@@ -51,6 +51,6 @@ export default nachv;
 
 //
 
-export type { GanzContent as Content } from "./nachvContent";
-export type { GanzLoadable as Loadable } from "./loadable";
+export type { NachvContent } from "./nachvContent";
+export type { NachvLoadable } from "./nachvLoadable";
 export type { GanzVerifiable as Verifiable } from "./verifiable";
