@@ -17,3 +17,8 @@ export class folgen {
 export default folgen;
 
 //
+
+export abstract class FolgenBase<T> {
+    protected constructor(public content: T | null) {
+    }
+}
