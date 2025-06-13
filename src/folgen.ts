@@ -1,8 +1,8 @@
-import NachvContent from "./nachvContent";
+import FolgenContent from "./folgenContent";
 import NachvLoadable from "./nachvLoadable";
 import NachvVerifiable from "./nachvVerifiable";
 
-export class folgen<T = any, C extends NachvContent<T> = NachvContent<T>> {
+export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
 
     public constructor(public content : C) {
     }
@@ -51,6 +51,6 @@ export default folgen;
 
 //
 
-export type { NachvContent } from "./nachvContent";
+export type { FolgenContent } from "./folgenContent";
 export type { NachvLoadable } from "./nachvLoadable";
 export type { NachvVerifiable } from "./nachvVerifiable";

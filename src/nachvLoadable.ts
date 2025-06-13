@@ -1,5 +1,5 @@
-import NachvContent from "./nachvContent";
+import FolgenContent from "./folgenContent";
 
-export type NachvLoadable<T> = NachvContent<T> & { loading: boolean }
+export type NachvLoadable<T> = FolgenContent<T> & { loading: boolean }
 
 export default NachvLoadable;
