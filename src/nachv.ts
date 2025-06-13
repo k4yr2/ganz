@@ -1,4 +1,4 @@
-import GanzContent from "./content";
+import GanzContent from "./nachvContent";
 import GanzLoadable from "./loadable";
 import GanzVerifiable from "./verifiable";
 
@@ -51,6 +51,6 @@ export default nachv;
 
 //
 
-export type { GanzContent as Content } from "./content";
+export type { GanzContent as Content } from "./nachvContent";
 export type { GanzLoadable as Loadable } from "./loadable";
 export type { GanzVerifiable as Verifiable } from "./verifiable";
