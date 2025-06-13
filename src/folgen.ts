@@ -1,5 +1,7 @@
+import { FolgenType } from "./folgenType";
 import { FolgenLoadable } from "./folgenLoadable";
 import { FolgenVerifiable } from "./folgenVerifiable";
+import { FolgenUnion } from "./folgenUnion";
 
 export class folgen {
 
@@ -12,6 +14,10 @@ export class folgen {
 
     public static verifiable<T>(content: T): FolgenVerifiable<T> {
         return { content, verified: false };
+    }
+
+    public static union<T, U extends FolgenType<T>[]>(content: T) : FolgenUnion<U> {
+        return { content } as FolgenUnion<U>;
     }
 
     //
