@@ -1,6 +1,6 @@
 import NachvContent from "./nachvContent";
 import NachvLoadable from "./nachvLoadable";
-import GanzVerifiable from "./verifiable";
+import NachvVerifiable from "./nachvVerifiable";
 
 export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
 
@@ -28,8 +28,8 @@ export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
         return new nachv<T, NachvLoadable<T>>({ value, loading: false });
     }
 
-    public static verifiable<T>(value: T | null): nachv<T, GanzVerifiable<T>> {
-        return new nachv<T, GanzVerifiable<T>>({ value, loading: false, verified: false });
+    public static verifiable<T>(value: T | null): nachv<T, NachvVerifiable<T>> {
+        return new nachv<T, NachvVerifiable<T>>({ value, loading: false, verified: false });
     }
 
     //
@@ -38,7 +38,7 @@ export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
         obj.loading = loading;
     }
 
-    public static setVerified<T, G extends GanzVerifiable<T>>(obj: G, verified: boolean = true) {
+    public static setVerified<T, G extends NachvVerifiable<T>>(obj: G, verified: boolean = true) {
         obj.verified = verified;
 
         if (verified) {
@@ -53,4 +53,4 @@ export default nachv;
 
 export type { NachvContent } from "./nachvContent";
 export type { NachvLoadable } from "./nachvLoadable";
-export type { GanzVerifiable as Verifiable } from "./verifiable";
+export type { NachvVerifiable } from "./nachvVerifiable";
