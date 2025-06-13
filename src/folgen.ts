@@ -1,52 +1,19 @@
-import FolgenContent from "./folgenContent";
-import FolgenLoadable from "./folgenLoadable";
-import FolgenVerifiable from "./folgenVerifiable";
+export class folgen {
 
-export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
-
-    public constructor(public content : C) {
+    private constructor() {
     }
 
-    public get value(): T | null {
-        return this.content.value;
-    }
-
-    //
-
-    public async do(fn : (content : C) => Promise<void>): Promise<folgen<T, C>>{
-        await fn(this.content);
-        return this;
-    }
-
-    //
-
-    public static loadable<T>(value: T | null): folgen<T, FolgenLoadable<T>> {
+    /*public static loadable<T>(value: T | null): folgen<T, FolgenLoadable<T>> {
         return new folgen<T, FolgenLoadable<T>>({ value, loading: false });
     }
 
     public static verifiable<T>(value: T | null): folgen<T, FolgenVerifiable<T>> {
         return new folgen<T, FolgenVerifiable<T>>({ value, loading: false, verified: false });
-    }
+    }*/
 
     //
-
-    public static setLoading<T, G extends FolgenLoadable<T>>(obj: G, loading: boolean = true) {
-        obj.loading = loading;
-    }
-
-    public static setVerified<T, G extends FolgenVerifiable<T>>(obj: G, verified: boolean = true) {
-        obj.verified = verified;
-
-        if (verified) {
-            obj.loading = false;
-        }
-    }
 }
 
 export default folgen;
 
 //
-
-export type { FolgenContent } from "./folgenContent";
-export type { FolgenLoadable } from "./folgenLoadable";
-export type { FolgenVerifiable } from "./folgenVerifiable";
