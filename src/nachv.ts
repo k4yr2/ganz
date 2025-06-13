@@ -2,7 +2,7 @@ import GanzContent from "./content";
 import GanzLoadable from "./loadable";
 import GanzVerifiable from "./verifiable";
 
-export class ganz<T = any, C extends GanzContent<T> = GanzContent<T>> {
+export class nachv<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     public constructor(public content : C) {
     }
@@ -13,7 +13,7 @@ export class ganz<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     //
 
-    public async do(fn : (content : C) => Promise<void>): Promise<ganz<T, C>>{
+    public async do(fn : (content : C) => Promise<void>): Promise<nachv<T, C>>{
         if (this.content.value === null) {
             throw new Error("Cannot perform operation on null value");
         }
@@ -24,12 +24,12 @@ export class ganz<T = any, C extends GanzContent<T> = GanzContent<T>> {
 
     //
 
-    public static loadable<T>(value: T | null): ganz<T, GanzLoadable<T>> {
-        return new ganz<T, GanzLoadable<T>>({ value, loading: false });
+    public static loadable<T>(value: T | null): nachv<T, GanzLoadable<T>> {
+        return new nachv<T, GanzLoadable<T>>({ value, loading: false });
     }
 
-    public static verifiable<T>(value: T | null): ganz<T, GanzVerifiable<T>> {
-        return new ganz<T, GanzVerifiable<T>>({ value, loading: false, verified: false });
+    public static verifiable<T>(value: T | null): nachv<T, GanzVerifiable<T>> {
+        return new nachv<T, GanzVerifiable<T>>({ value, loading: false, verified: false });
     }
 
     //
@@ -47,7 +47,7 @@ export class ganz<T = any, C extends GanzContent<T> = GanzContent<T>> {
     }
 }
 
-export default ganz;
+export default nachv;
 
 //
 
