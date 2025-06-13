@@ -1,4 +1,4 @@
-import { FolgenBase } from "./folgen";
+import { FolgenBase } from "./folgenBase";
 
 export class FolgenLoadable<T> extends FolgenBase<T> {
     #loading: boolean = false;
