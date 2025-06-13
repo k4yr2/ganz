@@ -7,6 +7,10 @@ export class ganz<T, C extends GanzContent<T>> {
     public constructor(public content : C) {
     }
 
+    public get value(): T | null {
+        return this.content.value;
+    }
+
     //
 
     public static loadable<T>(value: T | null): ganz<T, GanzLoadable<T>> {
