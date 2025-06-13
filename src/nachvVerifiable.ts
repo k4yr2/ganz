@@ -1,5 +1,5 @@
-import NachvLoadable from "./nachvLoadable";
+import FolgenLoadable from "./folgenLoadable";
 
-export type NachvVerifiable<T> = NachvLoadable<T> & { verified: boolean };
+export type NachvVerifiable<T> = FolgenLoadable<T> & { verified: boolean };
 
 export default NachvVerifiable;

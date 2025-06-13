@@ -1,5 +1,5 @@
 import FolgenContent from "./folgenContent";
-import NachvLoadable from "./nachvLoadable";
+import FolgenLoadable from "./folgenLoadable";
 import NachvVerifiable from "./nachvVerifiable";
 
 export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
@@ -24,8 +24,8 @@ export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
 
     //
 
-    public static loadable<T>(value: T | null): folgen<T, NachvLoadable<T>> {
-        return new folgen<T, NachvLoadable<T>>({ value, loading: false });
+    public static loadable<T>(value: T | null): folgen<T, FolgenLoadable<T>> {
+        return new folgen<T, FolgenLoadable<T>>({ value, loading: false });
     }
 
     public static verifiable<T>(value: T | null): folgen<T, NachvVerifiable<T>> {
@@ -34,7 +34,7 @@ export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
 
     //
 
-    public static setLoading<T, G extends NachvLoadable<T>>(obj: G, loading: boolean = true) {
+    public static setLoading<T, G extends FolgenLoadable<T>>(obj: G, loading: boolean = true) {
         obj.loading = loading;
     }
 
@@ -52,5 +52,5 @@ export default folgen;
 //
 
 export type { FolgenContent } from "./folgenContent";
-export type { NachvLoadable } from "./nachvLoadable";
+export type { FolgenLoadable } from "./folgenLoadable";
 export type { NachvVerifiable } from "./nachvVerifiable";
