@@ -1,17 +1,20 @@
-import Loadable, { LoadableWrapper } from "./loadable";
-import Verifiable, { VerifiableWrapper } from "./verifiable";
+import Content from "./content";
+import Loadable from "./loadable";
+import Verifiable from "./verifiable";
 
-export class ganz {
-    private constructor() {}
+export class ganz<T, G extends Content<T>> {
+
+    public constructor(protected g : G) {
+    }
 
     //
 
-    public static loadable<T>(content: T | null): LoadableWrapper<T> {
-        return new LoadableWrapper<T>({ content, loading: false });
+    public static loadable<T>(content: T | null): ganz<T, Loadable<T>> {
+        return new ganz<T, Loadable<T>>({ content, loading: false });
     }
 
-    public static verifiable<T>(content: T | null): VerifiableWrapper<T> {
-        return new VerifiableWrapper<T>({ content, loading: false, verified: false });
+    public static verifiable<T>(content: T | null): ganz<T, Verifiable<T>> {
+        return new ganz<T, Verifiable<T>>({ content, loading: false, verified: false });
     }
 
     //
