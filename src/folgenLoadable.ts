@@ -1,20 +1,5 @@
-import { FolgenContent } from "./folgenContent";
-import { FolgenBase } from "./folgenBase";
+import { FolgenType } from "./folgenType";
 
-export class FolgenLoadable<T> extends FolgenBase<T> {
-    #loading: boolean = false;
-
-    public constructor(content: FolgenContent<T>) {
-        super(content);
-    }
-    
-    public get loading(): boolean {
-        return this.#loading;
-    }
-
-    public set loading(value: boolean) {
-        this.#loading = value;
-    }
-}
+export type FolgenLoadable<T> = FolgenType<T> & { loading: boolean };
 
 export default FolgenLoadable;

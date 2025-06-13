@@ -1,22 +1,5 @@
-import { FolgenContent } from "./folgenContent";
-import { FolgenLoadable } from "./folgenLoadable";
+import { FolgenType } from "./folgenType";
 
-export class FolgenVerifiable<T> extends FolgenLoadable<T> {
-    #verified: boolean = false;
-
-    public constructor(content: FolgenContent<T>) {
-        super(content);
-    }
-
-    public get verified(): boolean {
-        return this.#verified;
-    }
-
-    public set verified(value: boolean) {
-        if(this.#verified = value) {
-            this.loading = false;
-        }
-    }
-}
+export type FolgenVerifiable<T> = FolgenType<T> & { verified: boolean };
 
 export default FolgenVerifiable;
