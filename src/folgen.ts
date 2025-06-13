@@ -1,6 +1,6 @@
 import FolgenContent from "./folgenContent";
 import FolgenLoadable from "./folgenLoadable";
-import NachvVerifiable from "./nachvVerifiable";
+import FolgenVerifiable from "./folgenVerifiable";
 
 export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
 
@@ -28,8 +28,8 @@ export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
         return new folgen<T, FolgenLoadable<T>>({ value, loading: false });
     }
 
-    public static verifiable<T>(value: T | null): folgen<T, NachvVerifiable<T>> {
-        return new folgen<T, NachvVerifiable<T>>({ value, loading: false, verified: false });
+    public static verifiable<T>(value: T | null): folgen<T, FolgenVerifiable<T>> {
+        return new folgen<T, FolgenVerifiable<T>>({ value, loading: false, verified: false });
     }
 
     //
@@ -38,7 +38,7 @@ export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
         obj.loading = loading;
     }
 
-    public static setVerified<T, G extends NachvVerifiable<T>>(obj: G, verified: boolean = true) {
+    public static setVerified<T, G extends FolgenVerifiable<T>>(obj: G, verified: boolean = true) {
         obj.verified = verified;
 
         if (verified) {
@@ -53,4 +53,4 @@ export default folgen;
 
 export type { FolgenContent } from "./folgenContent";
 export type { FolgenLoadable } from "./folgenLoadable";
-export type { NachvVerifiable } from "./nachvVerifiable";
+export type { FolgenVerifiable } from "./folgenVerifiable";
