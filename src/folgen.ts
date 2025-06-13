@@ -1,13 +1,16 @@
-import { FolgenType } from "./folgenType";
 import { FolgenLoadable } from "./folgenLoadable";
 import { FolgenVerifiable } from "./folgenVerifiable";
-import { FolgenUnion } from "./folgenUnion";
-import { FolgenValue } from "./folgenValue";
 
 export class folgen {
 
     private constructor() {
     }
+
+    //
+
+    public static loading = { loading : true } as FolgenLoadable;
+
+    public static verifiable = { verified : false } as FolgenVerifiable;
 }
 
 export default folgen;
