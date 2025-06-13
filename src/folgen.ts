@@ -2,7 +2,7 @@ import NachvContent from "./nachvContent";
 import NachvLoadable from "./nachvLoadable";
 import NachvVerifiable from "./nachvVerifiable";
 
-export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
+export class folgen<T = any, C extends NachvContent<T> = NachvContent<T>> {
 
     public constructor(public content : C) {
     }
@@ -13,7 +13,7 @@ export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
 
     //
 
-    public async do(fn : (content : C) => Promise<void>): Promise<nachv<T, C>>{
+    public async do(fn : (content : C) => Promise<void>): Promise<folgen<T, C>>{
         if (this.content.value === null) {
             throw new Error("Cannot perform operation on null value");
         }
@@ -24,12 +24,12 @@ export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
 
     //
 
-    public static loadable<T>(value: T | null): nachv<T, NachvLoadable<T>> {
-        return new nachv<T, NachvLoadable<T>>({ value, loading: false });
+    public static loadable<T>(value: T | null): folgen<T, NachvLoadable<T>> {
+        return new folgen<T, NachvLoadable<T>>({ value, loading: false });
     }
 
-    public static verifiable<T>(value: T | null): nachv<T, NachvVerifiable<T>> {
-        return new nachv<T, NachvVerifiable<T>>({ value, loading: false, verified: false });
+    public static verifiable<T>(value: T | null): folgen<T, NachvVerifiable<T>> {
+        return new folgen<T, NachvVerifiable<T>>({ value, loading: false, verified: false });
     }
 
     //
@@ -47,7 +47,7 @@ export class nachv<T = any, C extends NachvContent<T> = NachvContent<T>> {
     }
 }
 
-export default nachv;
+export default folgen;
 
 //
 
