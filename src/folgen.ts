@@ -2,22 +2,25 @@ import { FolgenType } from "./folgenType";
 import { FolgenLoadable } from "./folgenLoadable";
 import { FolgenVerifiable } from "./folgenVerifiable";
 import { FolgenUnion } from "./folgenUnion";
+import { FolgenValue } from "./folgenValue";
 
 export class folgen {
-
+    
     private constructor() {
     }
 
-    public static loadable<T>(content: T): FolgenLoadable<T> {
-        return { content, loading: false } as FolgenLoadable<T>;
+    //
+
+    public static loadable<T extends number>(content: T) {
+        return { content, loading: false } as FolgenValue<T, FolgenLoadable>;
     }
 
-    public static verifiable<T>(content: T): FolgenVerifiable<T> {
-        return { content, verified: false } as FolgenVerifiable<T>;
+    public static verifiable<T>(content: T) {
+        return { content, verified: false } as FolgenValue<T, FolgenVerifiable>;
     }
 
     public static union<T, U extends FolgenType<T>[]>(content: T) : FolgenUnion<U> {
-        return { content } as FolgenUnion<U>;
+        return { content } as FolgenValue<T, FolgenUnion<U>>;
     }
 
     //
