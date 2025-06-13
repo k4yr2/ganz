@@ -5,7 +5,12 @@ import { FolgenUnion } from "./folgenUnion";
 import { FolgenValue } from "./folgenValue";
 
 export class folgen {
-    
+
+    static #defaultMap : Map<string, FolgenType> = new Map<string, FolgenType>([
+        ["loadable", { loading: false } as FolgenLoadable],
+        ["verifiable", { verified: false } as FolgenVerifiable]
+    ]);
+
     private constructor() {
     }
 
