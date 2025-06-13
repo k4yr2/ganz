@@ -4,6 +4,25 @@ import Verifiable from "./verifiable";
 export class ganz {
     private constructor() {}
 
+    //
+
+    public static loadable<T>(content: T | null, loading: boolean = true): Loadable<T> {
+        return {
+            content,
+            loading
+        };
+    }
+
+    public static verifiable<T>(content: T | null, verified: boolean = false, loading: boolean = true): Verifiable<T> {
+        return {
+            content,
+            loading,
+            verified
+        };
+    }
+
+    //
+
     public static setLoading<T>(obj: Loadable<T>, loading: boolean = true) {
         obj.loading = loading;
     }
