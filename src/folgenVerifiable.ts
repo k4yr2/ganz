@@ -1,9 +1,10 @@
+import { FolgenContent } from "./folgenContent";
 import { FolgenLoadable } from "./folgenLoadable";
 
 export class FolgenVerifiable<T> extends FolgenLoadable<T> {
     #verified: boolean = false;
 
-    public constructor(content: T | null) {
+    public constructor(content: FolgenContent<T>) {
         super(content);
     }
 

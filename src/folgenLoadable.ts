@@ -1,9 +1,10 @@
+import { FolgenContent } from "./folgenContent";
 import { FolgenBase } from "./folgenBase";
 
 export class FolgenLoadable<T> extends FolgenBase<T> {
     #loading: boolean = false;
 
-    public constructor(content: T | null) {
+    public constructor(content: FolgenContent<T>) {
         super(content);
     }
     
