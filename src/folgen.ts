@@ -14,10 +14,6 @@ export class folgen<T = any, C extends FolgenContent<T> = FolgenContent<T>> {
     //
 
     public async do(fn : (content : C) => Promise<void>): Promise<folgen<T, C>>{
-        if (this.content.value === null) {
-            throw new Error("Cannot perform operation on null value");
-        }
-
         await fn(this.content);
         return this;
     }
