@@ -1,3 +1,3 @@
-export type Content<T> = { content : T | null } 
+export type GanzContent<T> = { value : T | null } 
 
-export default Content;
+export default GanzContent;

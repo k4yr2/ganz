@@ -1,5 +1,5 @@
-import Content from "./content";
+import GanzContent from "./content";
 
-export type Loadable<T> = Content<T> & { loading: boolean }
+export type Loadable<T> = GanzContent<T> & { loading: boolean }
 
 export default Loadable;
