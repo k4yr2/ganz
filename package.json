@@ -4,8 +4,9 @@
   "description": "",
   "main": "dist/ganz.js",
   "scripts": {
+    "clean": "rimraf dist",
     "build": "npx tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run clean && npm run build"
   },
   "keywords": [],
   "author": "",
