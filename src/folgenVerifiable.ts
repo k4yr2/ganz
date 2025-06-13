@@ -1,5 +1,5 @@
 import { FolgenType } from "./folgenType";
 
-export type FolgenVerifiable<T = any> = FolgenType<T, "verifiable"> & { verified: boolean };
+export type FolgenVerifiable = FolgenType<"verifiable"> & { verified: boolean };
 
 export default FolgenVerifiable;

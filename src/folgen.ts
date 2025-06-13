@@ -19,7 +19,7 @@ export class folgen {
         return { content, verified: false } as FolgenValue<T, FolgenVerifiable>;
     }
 
-    public static union<T, U extends FolgenType<T>[]>(content: T) : FolgenUnion<U> {
+    public static union<T, U extends FolgenType[]>(content: T){
         return { content } as FolgenValue<T, FolgenUnion<U>>;
     }
 
